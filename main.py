@@ -48,5 +48,6 @@ for i in range(4):
 import pywhatkit
 import datetime
 now = datetime.datetime.now().strftime("%H:%M").split(":")
-pywhatkit.sendwhatmsg("+972506703016", "👍🏻" , int(now[0]), int(now[1]) + 3)
+text = "מילאתי שאלון קורונה"
+pywhatkit.sendwhatmsg("+972506703016", text , int(now[0]), int(now[1]) + 3)
 """
