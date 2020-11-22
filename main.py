@@ -4,6 +4,7 @@ import time
 import re
 import analize
 import os
+from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -24,9 +25,12 @@ id_in.send_keys(ID)
 id_in.send_keys(Keys.ENTER)
 time.sleep(5)
 
-button = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div/div/button")
-if button:
-    button.click()
+try:
+    button = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div/div/button")
+    if button:
+        button.click()
+except NoSuchElementException:
+    print("Its a new day!")
 
 buttons = [
     driver.find_element(
