@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from pathlib import Path
 
-ID = "324272202"  # Put your ID number here
+ID = "ID"  # Put your ID number here
 
 path = Path(__file__).resolve().parent
 
@@ -62,6 +62,6 @@ import pywhatkit
 import datetime
 now = datetime.datetime.now().strftime("%H:%M").split(":")
 text = "מילאתי שאלון קורונה"
-pywhatkit.sendwhatmsg("+972506703016", text , int(now[0]), int(now[1]) + 3)
+pywhatkit.sendwhatmsg("PHONE_NUMBER", text , int(now[0]), int(now[1]) + 3)
 
 """
